@@ -1,19 +1,19 @@
-//import Home from './Home'
 import { useState } from 'react';
+import Row from 'react-bootstrap/Row';
+import Movie from './Movie';
 
-function MovieList (){
-    const [moiveArr , setMovieArr] = useState([]);
+
+
+function MovieList(props) {
+
+    const [moiveArr, setMovieArr] = useState([]);
+    //setMovieArr(moiveArr)
     return (
-        <>
-        {moiveArr.map((item)=>{
-            return <div>
-                <h3>{item.title}</h3>
-                <img src={item.poster_path}></img>
-                <p>{item.overview}</p>
-                <p>{item.release_date}</p>
-            </div>
-        })}
-        </>
+        <Row xs={1} md={2} className="g-4">
+            {props.moiveArr.map((item) => {
+                return <Movie moiveArr={moiveArr} item={item} />
+            })}
+        </Row>
     )
 }
 export default MovieList;
