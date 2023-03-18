@@ -6,14 +6,14 @@ import ModelMovie from './ModelMovie';
 
 
 function Movie(props) {
-    const [showFlag,setShowFlag] = useState(false);
-    const [clickedMovie,setClickedMovie] = useState({});
+    const [showFlag, setShowFlag] = useState(false);
+    const [clickedMovie, setClickedMovie] = useState({});
 
-    const handleShow = (props) =>{
+    const handleShow = (props) => {
         setClickedMovie(props.item);
-        setShowFlag(true); 
+        setShowFlag(true);
     }
-    const handleclose = () =>{
+    const handleclose = () => {
         setShowFlag(false);
     }
 
@@ -21,18 +21,18 @@ function Movie(props) {
         <>
             <Col>
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500/"+props.item.poster_path} />
+                    <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500/" + props.item.poster_path} />
                     <Card.Body>
                         <Card.Title>{props.item.title}</Card.Title>
                         <Card.Text>
                             <p>{props.item.overview}</p>
                             <p>{props.item.release_date}</p>
                         </Card.Text>
-                        <Button variant="primary" onClick={()=>{handleShow(props)}}>add to the favorite list</Button>
+                        <Button variant="primary" onClick={() => { handleShow(props) }}>add to the favorite list</Button>
                     </Card.Body>
                 </Card>
             </Col>
-            <ModelMovie showFlag={showFlag} handleclose={handleclose} movieData={clickedMovie}/>
+            <ModelMovie showFlag={showFlag} handleclose={handleclose} movieData={clickedMovie} />
         </>
     )
 }
