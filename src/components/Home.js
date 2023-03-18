@@ -19,7 +19,6 @@ function Home (){
     })
     return(
         <>
-        <h2>yaa</h2>
         <h1>Home</h1>
         {/* <button onClick={sendReq}>send req</button> */}
         <MovieList moiveArr={moiveArr} />
