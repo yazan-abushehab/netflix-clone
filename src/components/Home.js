@@ -11,7 +11,7 @@ function Home (){
         //console.log("button was clicked");
         const serverURL = `https://movies-library-gules.vercel.app/trending`;
         const resData = await axios(serverURL);
-        console.log(resData.data);
+        //console.log(resData.data);
         setMovieArr(resData.data)
     }
     useEffect(()=>{
